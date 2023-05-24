@@ -1,0 +1,27 @@
+Alphabet Soup Funding Success Analysis
+
+Overview: The goal of this analysis is to implement deeplearning to produce a model to determine the likelihood of success for funding 
+	applicants
+
+Results:
+	Data Preprocessing:
+	- Our target for the model was an binary variable for the success or failure of the funded venture, with 1 being a success and 0 
+	being a failure
+	- Our features for the model included the name of the applicant, the type of application, the affiliation of the applicant, the 
+	classification of the venture, the use case of the funds, the type of organization the applicant falls under, the income amount 
+	of the applicant, whether there are any special considerations for the applicant, and how much they are requesting
+	- We removed the EIN, as this was an unnecessary identifier.
+
+	Compiling, Training, and Evaluating the Model:
+	- Our model used two hidden layers with ten nodes each, both using Relu activation, and a one node output layer using sigmoid 
+	activation. This set up was used to maximize the accuracy of the model using the fewest layers.
+	- Our model achieved an accuracy of 77.14%, exceeding the 75% target.
+	- The most significant step to improve the performance of the model was the inclusion of binned applicant name data. 
+		+ The Name data was ordered by the number of applications for each name, then all applicants below one hundred were 
+		binned as 'Other'.
+
+Summary: Overall the model was able to meet and exceed the target accuracy, however it is possible that it could have been exceeded if 
+	more computing power was available. While using Google Colab for the analysis, there where instances where the code maxed out 
+	the permitted RAM usage for a free account. This was overcome by binning the data, however it is possible that such binning 
+	reduced the accuracy of the model.
+ 
